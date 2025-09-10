@@ -1,0 +1,40 @@
+meta:
+  name: "Twin Potty Tracker"
+
+logo:
+  small: "🚽"
+
+color:
+  palette:
+    sunshine-yellow: "#FFD700"
+    success-green: "#32CD32"
+    accident-orange: "#FF8C00"
+    boy-blue: "#4169E1"
+    girl-pink: "#FF69B4"
+    sanity-purple: "#9370DB"
+    calm-mint: "#98FB98"
+    stress-red: "#FF6B6B"
+
+  primary: "#FFD700"
+  success: "#32CD32"
+  warning: "#FF8C00"
+  info: "#4169E1"
+  danger: "#FF6B6B"
+
+typography:
+  fonts:
+    - family: "Comic Neue"
+      source: google
+      weight: [300, 400, 700]
+    - family: "Fredoka One"
+      source: google
+      weight: 400
+
+  headings:
+    family: "Fredoka One"
+    color: "#4169E1"
+
+  base:
+    family: "Comic Neue"
+    size: "16px"
+    line-height: 1.5

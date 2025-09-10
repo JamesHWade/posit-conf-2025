@@ -1,0 +1,59 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+$font-family-sans-serif: "Inter", sans-serif;
+$presentation-heading-font: "Inter", sans-serif;
+$presentation-heading-weight: 900;
+$presentation-font-size-root: 40px;
+
+// Colors - A modern, accessible palette
+$indigo: #5856d6;
+$yellow: #ffcc00;
+$red: #ff3b30;
+$green: #34c759;
+$darkblue: #001f3f;
+$lightblue: #007aff;
+
+$body-bg: #f8f9fa;
+$body-color: $darkblue;
+$link-color: $indigo;
+$presentation-heading-color: $darkblue;
+
+/*-- scss:rules --*/
+
+.center {
+  text-align: center;
+}
+
+// Custom highlight classes
+.hl-indigo { color: $indigo; font-weight: bold; }
+.hl-yellow { color: $yellow; font-weight: bold; }
+.hl-red { color: $red; font-weight: bold; }
+.hl-green { color: $green; font-weight: bold; }
+
+// Styling for the traps visualization
+.trap-box {
+  padding: 25px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.trap-1 {
+  border-left: 8px solid $red;
+}
+
+.trap-2 {
+  border-left: 8px solid $indigo;
+}
+
+// Dark slide styling for impact moments
+.dark-slide {
+  color: #ffffff;
+  h1, h2, h3 {
+    color: #ffffff;
+  }
+}

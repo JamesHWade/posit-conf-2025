@@ -1,0 +1,747 @@
+---
+title: "Disposable Shiny Apps"
+subtitle: " "
+author: "James Wade"
+date: "September 18, 2025"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    margin: 0.06
+    fig-align: center
+    footer: "Disposable Shiny Apps | posit::conf(2025)"
+    transition: slide
+    background-transition: fade
+    slide-number: c/t
+    auto-animate: true
+    # Shinylive configuration is required for the embedded app
+    # filters:
+      # - shinylive
+    embed-resources: false
+    width: 1920
+    height: 1080
+title-slide-attributes:
+  data-background-color: "#001f3f"
+  # Consider adding a subtle background image related to blueprints or sketches
+  # data-background-image: "images/blueprint.png"
+  # data-background-opacity: "0.1"
+execute:
+  echo: true
+  eval: false
+---
+
+## {.center data-background-color="#001f3f" .dark-slide}
+
+:::{.r-fit-text}
+My goal today is to convince you...
+:::
+
+:::{.r-fit-text style="color: #ffcc00; margin-top: 30px;" data-id="goal-1"}
+You should build **more** Shiny apps.
+:::
+
+. . .
+
+:::{.r-fit-text style="color: #ff3b30; margin-top: 30px;" data-id="goal-2"}
+And then **throw them away.**
+:::
+
+:::{.notes}
+Hook: Start strong and provocative. The contrast between building and throwing away should grab attention.
+:::
+
+## Who am I? {.center data-background-color="#001f3f" .dark-slide}
+
+:::{style="font-size: 1.5em;"}
+I'm James Wade. I build Shiny apps. A lot of them.
+:::
+
+. . .
+
+<br>
+
+:::: {.columns style="margin-top: 60px;"}
+
+::: {.column width="50%"}
+### The Production Side
+I maintain a 2-year-old app with 500+ daily users.
+
+It has tests, CI/CD, and a backlog.
+
+[I know the pain of longevity.]{.hl-yellow}
+:::
+
+::: {.column width="50%"}
+### The Disposable Side
+I also build apps for single meetings.
+
+They live for an hour and die gracefully.
+
+[I know the power of immediacy.]{.hl-yellow}
+:::
+
+::::
+
+:::{.notes}
+Establish credibility. Show I understand both production and rapid development. Justify why I am trustworthy on this topic (Coaching Session 2 feedback).
+:::
+
+
+## The Universal Frustration {.center}
+
+:::{style="font-size: 1.8em; line-height: 1.5;"}
+You present your analysis. You've polished the slides.
+:::
+
+. . .
+
+:::{style="font-size: 1.8em; margin-top: 40px;"}
+A stakeholder asks:
+:::
+
+:::{.fragment .r-fit-text style="color: #5856d6;"}
+"That's interesting, but what if we prioritized the data differently?"
+:::
+
+. . .
+
+:::{style="font-size: 1.8em; margin-top: 40px;"}
+Your answer:
+:::
+
+:::{.fragment .r-fit-text style="color: #ff3b30;"}
+"I'll have to get back to you on that..."
+:::
+
+:::{.fragment style="font-size: 1.3em; margin-top: 60px;"}
+The conversation stops. The momentum is lost.
+:::
+
+## Art Museum vs. Kids' Museum {data-background-color="#5856d6" .dark-slide}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Slides are Art Museums 🖼️
+:::{style="font-size: 1.3em; line-height: 1.8;"}
+- Look, don't touch
+- Passive appreciation
+- Curated, singular perspective
+- ["Please step back from the data"]{.hl-yellow}
+:::
+:::
+
+::: {.column width="50%"}
+### Apps are Kids' Museums 🎨
+:::{style="font-size: 1.3em; line-height: 1.8;"}
+- Hands-on exploration
+- Active discovery
+- Multiple perspectives
+- ["Come play with the data!"]{.hl-yellow}
+:::
+:::
+::::
+
+. . .
+
+:::{.r-fit-text style="margin-top: 80px;" .hl-yellow}
+Which room has more energy?
+:::
+
+## The Two Traps We Fall Into {.center}
+
+Why don't we build more apps? We fall into two traps.
+
+:::: {.columns}
+
+::: {.column width="50%" .trap-box .trap-1}
+### Trap 1: The "Don't Build" Trap 🚫
+
+"It's too much effort for just *one* meeting."
+
+We default to slides because the development hill looks too steep.
+:::
+
+::: {.column width="50%" .trap-box .trap-2}
+### Trap 2: The "Over-Build" Trap 🏗️
+"If I build it, it must be production-grade."
+
+We over-engineer a complex solution for a simple, one-off need.
+:::
+
+::::
+
+<br>
+
+:::{.fragment}
+:::{style="text-align: center; font-size: 1.5em; color: #ff3b30;"}
+The consequence of both traps? **Death by PowerPoint.** 💀
+:::
+:::
+
+## A New Mindset: [The Disposable App]{.hl-indigo} {.center}
+
+:::{style="font-size: 1.5em; margin-top: 50px;"}
+What if building an app for a single meeting was as easy as making a slide deck?
+:::
+
+. . .
+
+:::{.incremental style="font-size: 1.3em; line-height: 2; margin-top: 50px;"}
+- Its value is in its [immediate impact]{.hl-indigo}, not its longevity.
+- It's a [communication artifact]{.hl-indigo}, not a production system.
+- It's designed to be [thrown away]{.hl-indigo}.
+:::
+
+. . .
+
+:::{style="font-size: 1.5em; margin-top: 50px;"}
+[It's a whiteboard sketch, not a monument.]{.hl-red}
+:::
+
+:::{.notes}
+Define the concept clearly. Use the whiteboard analogy (from coaching feedback) – valuable in the moment, erasable afterward.
+:::
+
+
+## The Game Changer: AI Assistants 🤖
+
+The "development hill" isn't steep anymore.
+
+. . .
+
+:::{.r-fit-text}
+Enter "Vibe Coding"
+:::
+
+:::{style="font-size: 1.3em;"}
+We can now translate plain English prompts directly into functional Shiny code in seconds using tools like Copilot or the Positron Assistant.
+:::
+
+. . .
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.markdown}
+"Create a Shiny app to explore
+sales data by region and quarter,
+using bslib cards and a dark theme."
+```
+:::
+::: {.column width="50%"}
+:::{.fragment}
+```{.r}
+# AI generates the scaffold...
+library(shiny)
+library(bslib)
+# ... UI layout ...
+# ... Server logic ...
+```
+:::
+:::
+::::
+
+:::{.notes}
+This is the "magic" moment. The technology (AI assistants) makes the disposable approach feasible. This is where you could do a quick live demo or show a video of AI generating an app.
+:::
+
+## A Practical Guide {.center}
+
+:::{.r-fit-text}
+How to build a disposable app.
+:::
+
+:::{style="font-size: 1.5em; margin-top: 50px;"}
+We'll walk through the steps by building a critical tool...
+:::
+
+. . .
+
+:::{.r-fit-text style="margin-top: 50px;"}
+[The Cat Chaos Coordinator]{.hl-indigo} 🐱
+:::
+
+
+## Step 1: Start with ONE Question {auto-animate="true"}
+
+:::{style="font-size: 1.3em;"}
+A disposable app should do one thing well.
+:::
+
+:::{style="font-size: 1.3em; margin-top: 30px;"}
+My house: 3 kids, 4 cats. Chaos is guaranteed.
+:::
+
+:::{.r-fit-text style="margin-top: 50px;"}
+[Our Question:]{.dark}
+["How should I prioritize which cat needs attention?"]{.hl-indigo}
+:::
+
+:::{style="font-size: 1.3em; margin-top: 50px;"}
+The stakeholder (me) might change their priorities (weights) on the fly!
+:::
+
+:::{.notes}
+Define the scope. Use the fun, relatable example (Cat Chaos Coordinator) suggested in the coaching. Emphasize that the priorities might change, setting up the need for interactivity.
+:::
+
+
+## Step 2: Use a Template & Data {auto-animate="true"}
+
+:::{style="font-size: 1.3em;"}
+Never start from scratch. Use a minimal `app.R` and load your data.
+:::
+
+```{.r code-line-numbers="1-18" data-id="cat-app-code"}
+library(shiny)
+library(bslib)
+library(ggplot2)
+library(dplyr)
+
+# Simulated Cat Data
+cats <- data.frame(
+  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
+  hunger = c(8, 4, 9, 5),
+  cuteness = c(9, 7, 10, 8),
+  last_fed_hours = c(4, 1, 5, 2)
+)
+
+ui <- page_sidebar(
+  title = "🐱 Cat Chaos Coordinator",
+  # Inputs go here
+  # Output goes here
+)
+
+server <- function(input, output, session) {
+  # Logic goes here
+}
+```
+
+
+## Step 3: Build the Interaction (Inputs) {auto-animate="true"}
+
+:::{style="font-size: 1.3em;"}
+We need inputs that let the user define the prioritization weights.
+:::
+
+```{.r code-line-numbers="16-26" data-id="cat-app-code"}
+library(shiny)
+library(bslib)
+library(ggplot2)
+library(dplyr)
+
+# Simulated Cat Data
+cats <- data.frame(
+  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
+  hunger = c(8, 4, 9, 5),
+  cuteness = c(9, 7, 10, 8),
+  last_fed_hours = c(4, 1, 5, 2)
+)
+
+ui <- page_sidebar(
+  title = "🐱 Cat Chaos Coordinator",
+  sidebar = sidebar(
+    h4("Prioritization Weights"),
+    sliderInput("w_hunger", "Hunger Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_cuteness", "Cuteness Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_time", "Time Since Fed Weight",
+                min = 0, max = 10, value = 5)
+  ),
+  # Output goes here
+)
+
+server <- function(input, output, session) {
+  # Logic goes here
+}
+```
+
+
+## Step 4: Logic and Visualization {auto-animate="true"}
+
+:::{style="font-size: 1.3em;"}
+Calculate the score based on the dynamic weights and visualize the result.
+:::
+
+```{.r code-line-numbers="27, 31-47" data-id="cat-app-code"}
+library(shiny)
+library(bslib)
+library(ggplot2)
+library(dplyr)
+
+# Simulated Cat Data
+cats <- data.frame(
+  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
+  hunger = c(8, 4, 9, 5),
+  cuteness = c(9, 7, 10, 8),
+  last_fed_hours = c(4, 1, 5, 2)
+)
+
+ui <- page_sidebar(
+  title = "🐱 Cat Chaos Coordinator",
+  sidebar = sidebar(
+    h4("Prioritization Weights"),
+    sliderInput("w_hunger", "Hunger Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_cuteness", "Cuteness Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_time", "Time Since Fed Weight",
+                min = 0, max = 10, value = 5)
+  ),
+  card(
+    plotOutput("priority_plot")
+  )
+)
+
+server <- function(input, output, session) {
+  prioritized_cats <- reactive({
+    cats %>%
+      mutate(
+        score = (hunger * input$w_hunger) +
+                (cuteness * input$w_cuteness) +
+                (last_fed_hours * input$w_time)
+      ) %>%
+      arrange(desc(score))
+  })
+
+  output$priority_plot <- renderPlot({
+    ggplot(prioritized_cats(), aes(x = reorder(name, score), y = score)) +
+      geom_col(fill = "#5856d6") +
+      coord_flip() +
+      labs(title = "Cat Priority Score", x = "", y = "Score") +
+      theme_minimal(base_size = 18)
+  })
+}
+```
+
+
+## Step 5: Ship It (and maybe style it) {auto-animate="true"}
+
+:::{.r-fit-text}
+15 Minutes: From idea to interactive visualization.
+:::
+
+<br>
+
+:::{style="font-size: 1.3em;"}
+It works. It answers the question. It allows exploration.
+:::
+
+<br>
+
+:::{.fragment}
+**What about styling?**
+
+We can use `bslib` and `thematic` for instant polish. (There's an entire talk on that later today!)
+
+For now, [this is good enough]{.hl-indigo}.
+:::
+
+:::{.notes}
+Acknowledge styling but don't dwell on it, as advised in the transcript. Emphasize speed and utility.
+:::
+
+
+## The Result: Live Exploration with Shinylive
+
+:::{.r-fit-text}
+Let's explore the tradeoffs together, right here in the slides.
+:::
+
+```{r}
+#| standalone: true
+#| viewerHeight: 650
+
+library(shiny)
+library(bslib)
+library(ggplot2)
+library(dplyr)
+library(thematic)
+
+# Enable thematic for automatic plot styling based on the theme
+# Note: Thematic behavior can vary slightly in Shinylive vs local R
+thematic_shiny()
+
+# Simulated Cat Data with colors
+cats <- data.frame(
+  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
+  hunger = c(8, 4, 9, 5),
+  cuteness = c(9, 7, 10, 8),
+  last_fed_hours = c(4, 1, 5, 2),
+  color = c("#5856d6", "#ff3b30", "#34c759", "#ffcc00")
+)
+
+ui <- page_sidebar(
+  # Add a quick theme for polish
+  theme = bs_theme(bootswatch = "yeti"),
+  title = "🐱 Cat Chaos Coordinator",
+  sidebar = sidebar(
+    h4("Set Your Priorities"),
+    p("Adjust the weights to see how priorities change."),
+    sliderInput("w_hunger", "Hunger Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_cuteness", "Cuteness Weight",
+                min = 0, max = 10, value = 5),
+    sliderInput("w_time", "Time Since Fed Weight",
+                min = 0, max = 10, value = 5)
+  ),
+  layout_columns(
+      value_box(
+          title = "Highest Priority",
+          value = textOutput("top_priority_name"),
+          theme = "primary",
+          showcase = bsicons::bs_icon("exclamation-triangle-fill"),
+          height = "150px"
+      ),
+      card(
+        card_header("Full Priority Ranking"),
+        plotOutput("priority_plot")
+      ),
+      col_widths = c(4, 8)
+  )
+)
+
+server <- function(input, output, session) {
+  prioritized_cats <- reactive({
+    # Check if inputs are initialized (important for Shinylive)
+    req(input$w_hunger, input$w_cuteness, input$w_time)
+
+    cats %>%
+      mutate(
+        score = (hunger * input$w_hunger) +
+                (cuteness * input$w_cuteness) +
+                (last_fed_hours * input$w_time)
+      ) %>%
+      arrange(desc(score))
+  })
+
+  output$top_priority_name <- renderText({
+      req(prioritized_cats())
+      prioritized_cats()$name[1]
+  })
+
+  output$priority_plot <- renderPlot({
+    data <- prioritized_cats()
+    ggplot(data, aes(x = reorder(name, score), y = score, fill = color)) +
+      geom_col(width = 0.7) +
+      geom_text(aes(label = round(score, 1)), hjust = 1.2, color = "black", fontface="bold", size = 5) +
+      coord_flip() +
+      scale_fill_identity() + # Use the colors defined in the dataframe
+      labs(x = "", y = "Priority Score") +
+      theme_minimal(base_size = 18) +
+      theme(panel.grid.major.y = element_blank())
+  }, res = 96)
+}
+
+shinyApp(ui, server)
+```
+
+:::{.notes}
+The reveal! The embedded shinylive app allows live interaction. Play with the sliders. Show that if you prioritize cuteness, Whiskers wins, but if you prioritize hunger, Mittens wins. This is impossible with a static slide.
+:::
+
+
+## {data-background-color="#001f3f" .dark-slide}
+
+:::{.r-fit-text .center}
+[Overcoming the Objections]{.hl-yellow}
+:::
+
+:::{.r-fit-text .center}
+Let's address the elephants in the room. 🐘
+:::
+
+
+## Objection 1: "But who will support it?"
+
+:::{.r-fit-text}
+The IT department asks: "Where is the maintenance plan?"
+:::
+
+<br>
+
+:::{.fragment}
+:::{.center style="font-size: 2.5em; color: #34c759;"}
+**Nobody. That's the point.**
+:::
+:::
+
+<br>
+
+:::{.fragment}
+:::{style="font-size: 1.5em;"}
+You don't need a maintenance crew for a whiteboard drawing. You just erase it.
+:::
+
+:::{style="font-size: 1.5em; margin-top: 30px;"}
+This app took 15 minutes to build. If we need it again, [we'll build it again]{.hl-indigo}.
+:::
+:::
+
+:::{.notes}
+Address the biggest fear head-on. Use the whiteboard analogy. Frame the lack of support as a feature, not a bug.
+:::
+
+
+## Objection 2: "Won't this create 'App Sprawl'?"
+
+:::{.r-fit-text}
+"Are we going to have hundreds of messy, unsupported apps everywhere?"
+:::
+
+<br>
+
+:::{.fragment}
+:::{style="font-size: 1.5em;"}
+Yes, potentially.
+:::
+:::
+
+. . .
+
+:::{style="font-size: 1.3em; margin-top: 30px; color: #64748b;"}
+(Frankly, I might be the wrong person to ask. I've been accused of being an app hoarder.)
+:::
+
+<br>
+
+:::{.fragment}
+:::{style="font-size: 1.5em; margin-top: 30px;"}
+The key distinction: These are [communication artifacts]{.hl-indigo}, not [production systems]{.hl-indigo}.
+:::
+
+:::{style="font-size: 1.5em; margin-top: 30px; color: #ff3b30;"}
+**You must commit to throwing them away.**
+:::
+:::
+
+:::{.notes}
+Acknowledge the risk. Use the self-deprecating joke from the transcript about being an app hoarder, but emphasize the need to delete them.
+:::
+
+
+## Objection 3: "This sounds like more work!"
+
+:::{.r-fit-text}
+Is it really faster than making slides?
+:::
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+### The Slide Deck (8 Hours)
+- Initial creation: 3 hrs
+- Tweaking chart alignment: 2 hrs
+- Handling update requests: 2 hrs
+- "Can you change the colors?": 1 hr
+- [Impact: Low]{.hl-red}
+- [Interactivity: Zero]{.hl-red}
+:::
+
+::: {.column width="50%"}
+### The Disposable App (1 Hour)
+- Prompt + template (AI): 15 min
+- Integrating logic/data: 30 min
+- Refine & Test: 15 min
+- [Impact: High]{.hl-green}
+- [Interactivity: Infinite]{.hl-green}
+:::
+::::
+
+<br>
+
+:::{.fragment .center}
+The [Impact-to-Effort]{.hl-indigo} ratio is much higher.
+:::
+
+:::{.fragment .center style="font-size: 1.3em; margin-top: 30px;"}
+And let's be honest: [Fun work goes by faster]{.hl-indigo}.
+:::
+
+:::{.notes}
+Directly counter the effort argument. Acknowledge that for data scientists, coding is often more enjoyable than slide design. (Ref: Session 2 feedback).
+:::
+
+
+## The Mindset Shift {data-background-color="#5856d6" .dark-slide}
+
+:::{.r-fit-text}
+The barriers are gone. The tools are here.
+:::
+
+<br>
+
+:::{style="font-size: 1.5em; margin-top: 50px;"}
+The only thing left is to change how we think.
+:::
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+### Old Mindset
+- Perfection
+- Production-ready
+- Full test coverage
+- Edge case handling
+:::
+
+::: {.column width="50%"}
+### Disposable Mindset
+- Utility
+- Good enough is perfect
+- Happy path only
+- Fast to build
+:::
+::::
+
+
+## The Challenge {data-background-color="#001f3f" .dark-slide}
+
+:::{.r-fit-text}
+The next time you have a presentation...
+:::
+
+<br>
+
+:::{.fragment .r-fit-text}
+I challenge you:
+:::
+
+<br>
+
+:::{.fragment}
+:::{.center style="font-size: 2.5em; color: #ffcc00;"}
+Open ~~RStudio~~ Positron
+[BEFORE]{.hl-yellow}
+you open PowerPoint.
+:::
+:::
+
+## Thank You! {.center}
+
+:::{.r-fit-text}
+[Now go build something disposable!]{.hl-indigo}
+:::
+
+<br>
+
+:::{style="font-size: 1.3em;"}
+**Resources & Templates:** [github.com/jameswade/disposable-shiny](https://github.com/jameswade/disposable-shiny)
+
+**Connect:** [@jameshwade](https://twitter.com/james_h_wade) | [jameswade.com](https://jameswade.com)
+:::
+
+<br>
+
+:::{style="font-size: 1.5em; color: #5856d6;"}
+Questions?
+:::
+
+<br>
+
+:::{.fragment style="font-size: 1.5em; color: #ff3b30;"}
+*(Now, let's delete the Cat Chaos Coordinator)* 🚮
+:::
