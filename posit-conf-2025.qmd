@@ -1,6 +1,6 @@
 ---
 title: "Disposable Shiny Apps"
-subtitle: " "
+subtitle: "posit::conf(2025)"
 author: "James Wade"
 date: "September 18, 2025"
 format:
@@ -12,21 +12,18 @@ format:
     transition: slide
     background-transition: fade
     slide-number: c/t
-    auto-animate: true
+    # auto-animate: true
     # Shinylive not needed - using static screenshots instead
     # filters:
       # - shinylive
     embed-resources: false
     width: 1920
     height: 1080
-title-slide-attributes:
-  data-background-color: "#001f3f"
-  data-background-image: "media/app-in-trash.png"
-  data-background-size: "40% auto"
-  data-background-position: "85% center"
 execute:
   echo: true
   eval: false
+title-slide-attributes:
+  data-background: "linear-gradient(135deg, #001f3f 0%, #007aff 70%)"
 ---
 
 ## {.center data-background-color="#001f3f" .dark-slide}
@@ -54,8 +51,6 @@ Hook: Start strong and provocative. The contrast between building and throwing a
 :::{style="font-size: 1.5em;"}
 I'm James Wade. I build Shiny apps. A lot of them.
 :::
-
-. . .
 
 <br>
 
@@ -142,32 +137,28 @@ What do you hope to achieve with your presenation?
 :::
 :::
 
-## The Two Traps We Fall Into {.center}
+## The Two Traps {.center}
 
 Why don't we build more apps? We fall into two traps.
 
 :::: {.columns}
 
-::: {.column width="50%" .trap-box .trap-1}
+::: {.column width="50%"}
+:::{.trap-box .trap-1 .fragment data-fragment-index="1"}
 ### Trap 1: The "Don't Build" Trap 🚫
 
-:::{.fragment}
 "It's too much effort for just *one* meeting."
-:::
 
-:::{.fragment}
 We default to slides because the development hill looks too steep.
 :::
 :::
 
-::: {.column width="50%" .trap-box .trap-2}
+::: {.column width="50%"}
+:::{.trap-box .trap-2 .fragment data-fragment-index="2"}
 ### Trap 2: The "Over-Build" Trap 🏗️
 
-:::{.fragment}
 "If I build it, it must be production-grade."
-:::
 
-:::{.fragment}
 We over-engineer a complex solution for a simple, one-off need.
 :::
 :::
@@ -218,7 +209,7 @@ Vibe Coding
 :::
 
 :::{style="font-size: 1.3em;"}
-We can now translate our prompts directly into functional Shiny code in seconds using AI tools.
+We can now translate our prompts directly into functional Shiny code.
 :::
 
 ## A Practical Guide {.center}
@@ -252,16 +243,17 @@ We'll walk through the steps by building a critical tool...
 - ~~Step 3: Build the UI~~
 - ~~Step 4: Write server logic~~
 - ~~Step 5: Style and polish~~
+
+:::{style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;"}
+~~**Time: 2-4+ hours**~~
+:::
 :::
 
-:::{.fragment style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;"}
-**Time: 2-4+ hours**
-:::
 :::
 
 ::: {.column width="50%"}
 :::{.fragment}
-### The New Way {{< fa robot >}}
+### The New Way <i class="fa-solid fa-robot" aria-hidden="true"></i>
 - **Step 1: Define the question**
 - **Step 2: Write a clear prompt**
 - **Step 3: Write Code (with AI assistance)**

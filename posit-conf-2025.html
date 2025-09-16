@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="posit-conf-2025_files/libs/revealjs/dist/theme/quarto-41696ec0b1eb51cff664046d4a6bb5e9.css">
+  <link rel="stylesheet" href="posit-conf-2025_files/libs/revealjs/dist/theme/quarto-be44e21e928af673a59546a23fa96844.css">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -193,8 +193,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#001f3f" data-background-image="media/app-in-trash.png" data-background-position="85% center" data-background-size="40% auto" class="quarto-title-block center">
+<section id="title-slide" data-background="linear-gradient(135deg, #001f3f 0%, #007aff 70%)" class="quarto-title-block center">
   <h1 class="title">Disposable Shiny Apps</h1>
+  <p class="subtitle">posit::conf(2025)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -238,7 +239,6 @@ James Wade
 <div style="font-size: 1.5em;">
 <p>I’m James Wade. I build Shiny apps. A lot of them.</p>
 </div>
-<div class="fragment">
 <p><br></p>
 <div class="columns" style="margin-top: 60px;">
 <div class="column" style="width:50%;">
@@ -269,7 +269,6 @@ James Wade
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="the-universal-frustration" class="slide level2 center">
 <h2>The Universal Frustration</h2>
@@ -312,24 +311,20 @@ James Wade
 </div>
 </div>
 </section>
-<section id="the-two-traps-we-fall-into" class="slide level2 center">
-<h2>The Two Traps We Fall Into</h2>
+<section id="the-two-traps" class="slide level2 center">
+<h2>The Two Traps</h2>
 <p>Why don’t we build more apps? We fall into two traps.</p>
 <div class="columns">
-<div class="column trap-box trap-1" style="width:50%;">
+<div class="column" style="width:50%;">
+<div class="trap-box trap-1 fragment" data-fragment-index="1">
 <h3 id="trap-1-the-dont-build-trap">Trap 1: The “Don’t Build” Trap 🚫</h3>
-<div class="fragment">
 <p>“It’s too much effort for just <em>one</em> meeting.”</p>
-</div>
-<div class="fragment">
 <p>We default to slides because the development hill looks too steep.</p>
 </div>
-</div><div class="column trap-box trap-2" style="width:50%;">
+</div><div class="column" style="width:50%;">
+<div class="trap-box trap-2 fragment" data-fragment-index="2">
 <h3 id="trap-2-the-over-build-trap">Trap 2: The “Over-Build” Trap 🏗️</h3>
-<div class="fragment">
 <p>“If I build it, it must be production-grade.”</p>
-</div>
-<div class="fragment">
 <p>We over-engineer a complex solution for a simple, one-off need.</p>
 </div>
 </div></div>
@@ -381,7 +376,7 @@ James Wade
 <p>Vibe Coding</p>
 </div>
 <div style="font-size: 1.3em;">
-<p>We can now translate our prompts directly into functional Shiny code in seconds using AI tools.</p>
+<p>We can now translate our prompts directly into functional Shiny code.</p>
 </div>
 </div>
 </section>
@@ -413,13 +408,13 @@ James Wade
 <li><del>Step 4: Write server logic</del></li>
 <li><del>Step 5: Style and polish</del></li>
 </ul>
+<div style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;">
+<p><del><strong>Time: 2-4+ hours</strong></del></p>
 </div>
-<div class="fragment" style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;">
-<p><strong>Time: 2-4+ hours</strong></p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<h3 id="the-new-way">The New Way {{&lt; fa robot &gt;}}</h3>
+<h3 id="the-new-way">The New Way <i class="fa-solid fa-robot" aria-hidden="true"></i></h3>
 <ul>
 <li><strong>Step 1: Define the question</strong></li>
 <li><strong>Step 2: Write a clear prompt</strong></li>
