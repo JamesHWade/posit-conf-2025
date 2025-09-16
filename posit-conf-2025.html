@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="posit-conf-2025_files/libs/revealjs/dist/theme/quarto-8c912e23863119e99195002f3a7fc0fe.css">
+  <link rel="stylesheet" href="posit-conf-2025_files/libs/revealjs/dist/theme/quarto-41696ec0b1eb51cff664046d4a6bb5e9.css">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="posit-conf-2025_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -193,7 +193,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#001f3f" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#001f3f" data-background-image="media/app-in-trash.png" data-background-position="85% center" data-background-size="40% auto" class="quarto-title-block center">
   <h1 class="title">Disposable Shiny Apps</h1>
 
 <div class="quarto-title-authors">
@@ -242,15 +242,19 @@ James Wade
 <p><br></p>
 <div class="columns" style="margin-top: 60px;">
 <div class="column" style="width:50%;">
+<div class="fragment">
 <h3 id="the-production-side">The Production Side</h3>
-<p>I maintain a 2-year-old app with 500+ daily users.</p>
+<p>I maintain a 2-year-old app with 100+ users.</p>
 <p>It has tests, CI/CD, and a backlog.</p>
 <p><span class="hl-yellow">I know the pain of longevity.</span></p>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="fragment">
 <h3 id="the-disposable-side">The Disposable Side</h3>
 <p>I also build apps for single meetings.</p>
 <p>They live for an hour and die gracefully.</p>
 <p><span class="hl-yellow">I know the power of immediacy.</span></p>
+</div>
 </div></div>
 <aside class="notes">
 <p>Establish credibility. Show I understand both production and rapid development. Justify why I am trustworthy on this topic (Coaching Session 2 feedback).</p>
@@ -292,33 +296,19 @@ James Wade
 </div>
 </div>
 </section>
-<section id="art-museum-vs.-kids-museum" class="slide level2 dark-slide" data-background-color="#5856d6">
-<h2>Art Museum vs.&nbsp;Kids’ Museum</h2>
+<section id="interactive-vs-passive" class="slide level2 dark-slide" data-background-color="#5856d6">
+<h2>Interactive vs Passive</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="slides-are-art-museums">Slides are Art Museums 🖼️</h3>
-<div style="font-size: 1.3em; line-height: 1.8;">
-<ul>
-<li>Look, don’t touch</li>
-<li>Passive appreciation</li>
-<li>Curated, singular perspective</li>
-<li><span class="hl-yellow">“Please step back from the data”</span></li>
-</ul>
-</div>
+<p><img data-src="media/childrens-museum.png" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-height: 700px; object-fit: cover;;width:100.0%"></p>
+<p><span class="hl-yellow">“Come play with the data!”</span></p>
 </div><div class="column" style="width:50%;">
-<h3 id="apps-are-kids-museums">Apps are Kids’ Museums 🎨</h3>
-<div style="font-size: 1.3em; line-height: 1.8;">
-<ul>
-<li>Hands-on exploration</li>
-<li>Active discovery</li>
-<li>Multiple perspectives</li>
-<li><span class="hl-yellow">“Come play with the data!”</span></li>
-</ul>
-</div>
+<p><img data-src="media/fine-art-gallery.png" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-height: 700px; object-fit: cover;;width:100.0%"></p>
+<p><span class="hl-yellow">“Please step back from the data”</span></p>
 </div></div>
-<div class="fragment">
-<div class="r-fit-text hl-yellow" style="margin-top: 80px;">
-<p>Which room has more energy?</p>
+<div class="fragment absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; z-index: 10;">
+<div class="r-fit-text" style="background: rgba(0, 0, 0, 0.7); padding: 20px 40px; border-radius: 10px; color: #ffcc00;">
+<p>What do you hope to achieve with your presenation?</p>
 </div>
 </div>
 </section>
@@ -328,12 +318,20 @@ James Wade
 <div class="columns">
 <div class="column trap-box trap-1" style="width:50%;">
 <h3 id="trap-1-the-dont-build-trap">Trap 1: The “Don’t Build” Trap 🚫</h3>
+<div class="fragment">
 <p>“It’s too much effort for just <em>one</em> meeting.”</p>
+</div>
+<div class="fragment">
 <p>We default to slides because the development hill looks too steep.</p>
+</div>
 </div><div class="column trap-box trap-2" style="width:50%;">
 <h3 id="trap-2-the-over-build-trap">Trap 2: The “Over-Build” Trap 🏗️</h3>
+<div class="fragment">
 <p>“If I build it, it must be production-grade.”</p>
+</div>
+<div class="fragment">
 <p>We over-engineer a complex solution for a simple, one-off need.</p>
+</div>
 </div></div>
 <p><br></p>
 <div class="fragment">
@@ -380,41 +378,11 @@ James Wade
 <p>The “development hill” isn’t steep anymore.</p>
 <div class="fragment">
 <div class="r-fit-text">
-<p>Enter “Vibe Coding”</p>
+<p>Vibe Coding</p>
 </div>
 <div style="font-size: 1.3em;">
-<p>We can now translate plain English prompts directly into functional Shiny code in seconds using tools like Copilot or the Positron Assistant.</p>
+<p>We can now translate our prompts directly into functional Shiny code in seconds using AI tools.</p>
 </div>
-</div>
-<div class="fragment">
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href=""></a>"Create a Shiny app to explore</span>
-<span id="cb1-2"><a href=""></a>sales data by region and quarter,</span>
-<span id="cb1-3"><a href=""></a>using bslib cards and a dark theme."</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># AI generates the scaffold...</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">library</span>(shiny)</span>
-<span id="cb2-3"><a href=""></a><span class="fu">library</span>(bslib)</span>
-<span id="cb2-4"><a href=""></a><span class="co"># ... UI layout ...</span></span>
-<span id="cb2-5"><a href=""></a><span class="co"># ... Server logic ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-<aside class="notes">
-<p>This is the “magic” moment. The technology (AI assistants) makes the disposable approach feasible. This is where you could do a quick live demo or show a video of AI generating an app.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </div>
 </section>
 <section id="a-practical-guide" class="slide level2 center">
@@ -427,9 +395,43 @@ James Wade
 </div>
 <div class="fragment">
 <div class="r-fit-text" style="margin-top: 50px;">
-<p><span class="hl-indigo">The Cat Chaos Coordinator</span> 🐱</p>
+<p><span class="hl-indigo">The Twin Potty Training Command Center</span> 🚽</p>
 </div>
 </div>
+</section>
+<section id="building-apps-old-way-vs.-new-way" class="slide level2 center">
+<h2>Building Apps: Old Way vs.&nbsp;New Way</h2>
+<p><br> <br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="the-old-way">The Old Way 😓</h3>
+<div style="opacity: 0.5;">
+<ul>
+<li><del>Step 1: Define the question</del></li>
+<li><del>Step 2: Set up template</del></li>
+<li><del>Step 3: Build the UI</del></li>
+<li><del>Step 4: Write server logic</del></li>
+<li><del>Step 5: Style and polish</del></li>
+</ul>
+</div>
+<div class="fragment" style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;">
+<p><strong>Time: 2-4+ hours</strong></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<h3 id="the-new-way">The New Way {{&lt; fa robot &gt;}}</h3>
+<ul>
+<li><strong>Step 1: Define the question</strong></li>
+<li><strong>Step 2: Write a clear prompt</strong></li>
+<li><strong>Step 3: Write Code (with AI assistance)</strong></li>
+<li><strong>Step 4: Tweak and deploy</strong></li>
+</ul>
+<div style="color: #34c759; font-size: 1.2em; margin-top: 20px;">
+<p><strong>Time: 15 minutes</strong></p>
+</div>
+<p>Don’t let it take any longer!</p>
+</div>
+</div></div>
 </section>
 <section id="step-1-start-with-one-question" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Step 1: Start with ONE Question</h2>
@@ -437,266 +439,133 @@ James Wade
 <p>A disposable app should do one thing well.</p>
 </div>
 <div style="font-size: 1.3em; margin-top: 30px;">
-<p>My house: 3 kids, 4 cats. Chaos is guaranteed.</p>
+<p>My house: Twin toddlers in potty training. Chaos is guaranteed.</p>
 </div>
 <div class="r-fit-text" style="margin-top: 50px;">
-<p><span class="dark">Our Question:</span> <span class="hl-indigo">“How should I prioritize which cat needs attention?”</span></p>
+<p><span class="dark">Our Question:</span> <span class="hl-indigo">“How can I track and optimize twin potty training success?”</span></p>
 </div>
 <div style="font-size: 1.3em; margin-top: 50px;">
-<p>The stakeholder (me) might change their priorities (weights) on the fly!</p>
+<p>The stakeholders (frazzled parents) need real-time insights and encouragement!</p>
 </div>
-<aside class="notes">
-<p>Define the scope. Use the fun, relatable example (Cat Chaos Coordinator) suggested in the coaching. Emphasize that the priorities might change, setting up the need for interactivity.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="step-2-use-a-template-data" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Step 2: Use a Template &amp; Data</h2>
+<section id="step-2-write-a-clear-prompt" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Step 2: Write a Clear Prompt</h2>
 <div style="font-size: 1.3em;">
-<p>Never start from scratch. Use a minimal <code>app.R</code> and load your data.</p>
+<p>Describe what you want in plain English. Be specific about features and tools.</p>
 </div>
-<div class="sourceCode" id="cb3" data-id="cat-app-code" data-code-line-numbers="1-18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(shiny)</span>
-<span id="cb3-2" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(bslib)</span>
-<span id="cb3-3" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-4" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb3-6" class="hljs-ln-code"><a href=""></a><span class="co"># Simulated Cat Data</span></span>
-<span id="cb3-7" class="hljs-ln-code"><a href=""></a>cats <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-8" class="hljs-ln-code"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Mittens"</span>, <span class="st">"Shadow"</span>, <span class="st">"Whiskers"</span>, <span class="st">"Luna"</span>),</span>
-<span id="cb3-9" class="hljs-ln-code"><a href=""></a>  <span class="at">hunger =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">5</span>),</span>
-<span id="cb3-10" class="hljs-ln-code"><a href=""></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">8</span>),</span>
-<span id="cb3-11" class="hljs-ln-code"><a href=""></a>  <span class="at">last_fed_hours =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb3-12" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb3-13" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb3-14" class="hljs-ln-code"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">page_sidebar</span>(</span>
-<span id="cb3-15" class="hljs-ln-code"><a href=""></a>  <span class="at">title =</span> <span class="st">"🐱 Cat Chaos Coordinator"</span>,</span>
-<span id="cb3-16" class="hljs-ln-code"><a href=""></a>  <span class="co"># Inputs go here</span></span>
-<span id="cb3-17" class="hljs-ln-code"><a href=""></a>  <span class="co"># Output goes here</span></span>
-<span id="cb3-18" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb3-19" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb3-20" class="hljs-ln-code"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb3-21" class="hljs-ln-code"><a href=""></a>  <span class="co"># Logic goes here</span></span>
-<span id="cb3-22" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="step-3-build-the-interaction-inputs" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Step 3: Build the Interaction (Inputs)</h2>
-<div style="font-size: 1.3em;">
-<p>We need inputs that let the user define the prioritization weights.</p>
-</div>
-<div class="sourceCode" id="cb4" data-id="cat-app-code" data-code-line-numbers="16-26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(shiny)</span>
-<span id="cb4-2" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(bslib)</span>
-<span id="cb4-3" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-4" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb4-6" class="hljs-ln-code"><a href=""></a><span class="co"># Simulated Cat Data</span></span>
-<span id="cb4-7" class="hljs-ln-code"><a href=""></a>cats <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-8" class="hljs-ln-code"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Mittens"</span>, <span class="st">"Shadow"</span>, <span class="st">"Whiskers"</span>, <span class="st">"Luna"</span>),</span>
-<span id="cb4-9" class="hljs-ln-code"><a href=""></a>  <span class="at">hunger =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">5</span>),</span>
-<span id="cb4-10" class="hljs-ln-code"><a href=""></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">8</span>),</span>
-<span id="cb4-11" class="hljs-ln-code"><a href=""></a>  <span class="at">last_fed_hours =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb4-12" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb4-13" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb4-14" class="hljs-ln-code"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">page_sidebar</span>(</span>
-<span id="cb4-15" class="hljs-ln-code"><a href=""></a>  <span class="at">title =</span> <span class="st">"🐱 Cat Chaos Coordinator"</span>,</span>
-<span id="cb4-16" class="hljs-ln-code"><a href=""></a>  <span class="at">sidebar =</span> <span class="fu">sidebar</span>(</span>
-<span id="cb4-17" class="hljs-ln-code"><a href=""></a>    <span class="fu">h4</span>(<span class="st">"Prioritization Weights"</span>),</span>
-<span id="cb4-18" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_hunger"</span>, <span class="st">"Hunger Weight"</span>,</span>
-<span id="cb4-19" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb4-20" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_cuteness"</span>, <span class="st">"Cuteness Weight"</span>,</span>
-<span id="cb4-21" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb4-22" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_time"</span>, <span class="st">"Time Since Fed Weight"</span>,</span>
-<span id="cb4-23" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>)</span>
-<span id="cb4-24" class="hljs-ln-code"><a href=""></a>  ),</span>
-<span id="cb4-25" class="hljs-ln-code"><a href=""></a>  <span class="co"># Output goes here</span></span>
-<span id="cb4-26" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb4-27" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb4-28" class="hljs-ln-code"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb4-29" class="hljs-ln-code"><a href=""></a>  <span class="co"># Logic goes here</span></span>
-<span id="cb4-30" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="step-4-logic-and-visualization" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Step 4: Logic and Visualization</h2>
-<div style="font-size: 1.3em;">
-<p>Calculate the score based on the dynamic weights and visualize the result.</p>
-</div>
-<div class="sourceCode" id="cb5" data-id="cat-app-code" data-code-line-numbers="27, 31-47"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(shiny)</span>
-<span id="cb5-2" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(bslib)</span>
-<span id="cb5-3" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-4" class="hljs-ln-code"><a href=""></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb5-6" class="hljs-ln-code"><a href=""></a><span class="co"># Simulated Cat Data</span></span>
-<span id="cb5-7" class="hljs-ln-code"><a href=""></a>cats <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-8" class="hljs-ln-code"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Mittens"</span>, <span class="st">"Shadow"</span>, <span class="st">"Whiskers"</span>, <span class="st">"Luna"</span>),</span>
-<span id="cb5-9" class="hljs-ln-code"><a href=""></a>  <span class="at">hunger =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">5</span>),</span>
-<span id="cb5-10" class="hljs-ln-code"><a href=""></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">8</span>),</span>
-<span id="cb5-11" class="hljs-ln-code"><a href=""></a>  <span class="at">last_fed_hours =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb5-12" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb5-13" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb5-14" class="hljs-ln-code"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">page_sidebar</span>(</span>
-<span id="cb5-15" class="hljs-ln-code"><a href=""></a>  <span class="at">title =</span> <span class="st">"🐱 Cat Chaos Coordinator"</span>,</span>
-<span id="cb5-16" class="hljs-ln-code"><a href=""></a>  <span class="at">sidebar =</span> <span class="fu">sidebar</span>(</span>
-<span id="cb5-17" class="hljs-ln-code"><a href=""></a>    <span class="fu">h4</span>(<span class="st">"Prioritization Weights"</span>),</span>
-<span id="cb5-18" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_hunger"</span>, <span class="st">"Hunger Weight"</span>,</span>
-<span id="cb5-19" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb5-20" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_cuteness"</span>, <span class="st">"Cuteness Weight"</span>,</span>
-<span id="cb5-21" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb5-22" class="hljs-ln-code"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_time"</span>, <span class="st">"Time Since Fed Weight"</span>,</span>
-<span id="cb5-23" class="hljs-ln-code"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>)</span>
-<span id="cb5-24" class="hljs-ln-code"><a href=""></a>  ),</span>
-<span id="cb5-25" class="hljs-ln-code"><a href=""></a>  <span class="fu">card</span>(</span>
-<span id="cb5-26" class="hljs-ln-code"><a href=""></a>    <span class="fu">plotOutput</span>(<span class="st">"priority_plot"</span>)</span>
-<span id="cb5-27" class="hljs-ln-code"><a href=""></a>  )</span>
-<span id="cb5-28" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb5-29" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb5-30" class="hljs-ln-code"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb5-31" class="hljs-ln-code"><a href=""></a>  prioritized_cats <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
-<span id="cb5-32" class="hljs-ln-code"><a href=""></a>    cats <span class="sc">%&gt;%</span></span>
-<span id="cb5-33" class="hljs-ln-code"><a href=""></a>      <span class="fu">mutate</span>(</span>
-<span id="cb5-34" class="hljs-ln-code"><a href=""></a>        <span class="at">score =</span> (hunger <span class="sc">*</span> input<span class="sc">$</span>w_hunger) <span class="sc">+</span></span>
-<span id="cb5-35" class="hljs-ln-code"><a href=""></a>                (cuteness <span class="sc">*</span> input<span class="sc">$</span>w_cuteness) <span class="sc">+</span></span>
-<span id="cb5-36" class="hljs-ln-code"><a href=""></a>                (last_fed_hours <span class="sc">*</span> input<span class="sc">$</span>w_time)</span>
-<span id="cb5-37" class="hljs-ln-code"><a href=""></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-38" class="hljs-ln-code"><a href=""></a>      <span class="fu">arrange</span>(<span class="fu">desc</span>(score))</span>
-<span id="cb5-39" class="hljs-ln-code"><a href=""></a>  })</span>
-<span id="cb5-40" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb5-41" class="hljs-ln-code"><a href=""></a>  output<span class="sc">$</span>priority_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb5-42" class="hljs-ln-code"><a href=""></a>    <span class="fu">ggplot</span>(<span class="fu">prioritized_cats</span>(), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(name, score), <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb5-43" class="hljs-ln-code"><a href=""></a>      <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#5856d6"</span>) <span class="sc">+</span></span>
-<span id="cb5-44" class="hljs-ln-code"><a href=""></a>      <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb5-45" class="hljs-ln-code"><a href=""></a>      <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cat Priority Score"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Score"</span>) <span class="sc">+</span></span>
-<span id="cb5-46" class="hljs-ln-code"><a href=""></a>      <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span>
-<span id="cb5-47" class="hljs-ln-code"><a href=""></a>  })</span>
-<span id="cb5-48" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="step-5-ship-it-and-maybe-style-it" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Step 5: Ship It (and maybe style it)</h2>
-<div class="r-fit-text">
-<p>15 Minutes: From idea to interactive visualization.</p>
-</div>
-<p><br></p>
-<div style="font-size: 1.3em;">
-<p>It works. It answers the question. It allows exploration.</p>
-</div>
-<p><br></p>
 <div class="fragment">
-<p><strong>What about styling?</strong></p>
-<p>We can use <code>bslib</code> and <code>thematic</code> for instant polish. (There’s an entire talk on that later today!)</p>
-<p>For now, <span class="hl-indigo">this is good enough</span>.</p>
+<div style="font-size: 1.1em; margin-top: 30px;">
+<p><strong>Key elements of a good prompt:</strong></p>
+<ul>
+<li>Clear objective (“track twin potty training”)</li>
+<li>Specific features (“success rates”, “predictions”, “chatbot using claude-sonnet-4”)</li>
+<li>UI preferences (“use bslib”, “sidebar layout”)</li>
+<li>Data context (“twins named Henry and Penelope”)</li>
+</ul>
 </div>
-<aside class="notes">
-<p>Acknowledge styling but don’t dwell on it, as advised in the transcript. Emphasize speed and utility.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+<div class="fragment">
+<div style="font-size: 1.3em; margin-top: 40px; color: #5856d6;">
+<p>The better your prompt, the less tweaking you’ll need.</p>
+</div>
+</div>
 </section>
-<section id="the-result-live-exploration-with-shinylive" class="slide level2">
-<h2>The Result: Live Exploration with Shinylive</h2>
-<div class="r-fit-text">
-<p>Let’s explore the tradeoffs together, right here in the slides.</p>
+<section id="the-ai-magic-one-prompt-away" class="slide level2">
+<h2>The AI Magic: One Prompt Away</h2>
+<div style="font-size: 1.3em;">
+<p>Here’s the Positron Assistant prompt that built our twin tracking app:</p>
 </div>
-<div class="cell" data-standalone="true" data-viewerheight="650">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(shiny)</span>
-<span id="cb6-2"><a href=""></a><span class="fu">library</span>(bslib)</span>
-<span id="cb6-3"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-4"><a href=""></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-5"><a href=""></a><span class="fu">library</span>(thematic)</span>
-<span id="cb6-6"><a href=""></a></span>
-<span id="cb6-7"><a href=""></a><span class="co"># Enable thematic for automatic plot styling based on the theme</span></span>
-<span id="cb6-8"><a href=""></a><span class="co"># Note: Thematic behavior can vary slightly in Shinylive vs local R</span></span>
-<span id="cb6-9"><a href=""></a><span class="fu">thematic_shiny</span>()</span>
-<span id="cb6-10"><a href=""></a></span>
-<span id="cb6-11"><a href=""></a><span class="co"># Simulated Cat Data with colors</span></span>
-<span id="cb6-12"><a href=""></a>cats <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb6-13"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Mittens"</span>, <span class="st">"Shadow"</span>, <span class="st">"Whiskers"</span>, <span class="st">"Luna"</span>),</span>
-<span id="cb6-14"><a href=""></a>  <span class="at">hunger =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">5</span>),</span>
-<span id="cb6-15"><a href=""></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">8</span>),</span>
-<span id="cb6-16"><a href=""></a>  <span class="at">last_fed_hours =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>),</span>
-<span id="cb6-17"><a href=""></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"#5856d6"</span>, <span class="st">"#ff3b30"</span>, <span class="st">"#34c759"</span>, <span class="st">"#ffcc00"</span>)</span>
-<span id="cb6-18"><a href=""></a>)</span>
-<span id="cb6-19"><a href=""></a></span>
-<span id="cb6-20"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">page_sidebar</span>(</span>
-<span id="cb6-21"><a href=""></a>  <span class="co"># Add a quick theme for polish</span></span>
-<span id="cb6-22"><a href=""></a>  <span class="at">theme =</span> <span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"yeti"</span>),</span>
-<span id="cb6-23"><a href=""></a>  <span class="at">title =</span> <span class="st">"🐱 Cat Chaos Coordinator"</span>,</span>
-<span id="cb6-24"><a href=""></a>  <span class="at">sidebar =</span> <span class="fu">sidebar</span>(</span>
-<span id="cb6-25"><a href=""></a>    <span class="fu">h4</span>(<span class="st">"Set Your Priorities"</span>),</span>
-<span id="cb6-26"><a href=""></a>    <span class="fu">p</span>(<span class="st">"Adjust the weights to see how priorities change."</span>),</span>
-<span id="cb6-27"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_hunger"</span>, <span class="st">"Hunger Weight"</span>,</span>
-<span id="cb6-28"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb6-29"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_cuteness"</span>, <span class="st">"Cuteness Weight"</span>,</span>
-<span id="cb6-30"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>),</span>
-<span id="cb6-31"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"w_time"</span>, <span class="st">"Time Since Fed Weight"</span>,</span>
-<span id="cb6-32"><a href=""></a>                <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>, <span class="at">value =</span> <span class="dv">5</span>)</span>
-<span id="cb6-33"><a href=""></a>  ),</span>
-<span id="cb6-34"><a href=""></a>  <span class="fu">layout_columns</span>(</span>
-<span id="cb6-35"><a href=""></a>      <span class="fu">value_box</span>(</span>
-<span id="cb6-36"><a href=""></a>          <span class="at">title =</span> <span class="st">"Highest Priority"</span>,</span>
-<span id="cb6-37"><a href=""></a>          <span class="at">value =</span> <span class="fu">textOutput</span>(<span class="st">"top_priority_name"</span>),</span>
-<span id="cb6-38"><a href=""></a>          <span class="at">theme =</span> <span class="st">"primary"</span>,</span>
-<span id="cb6-39"><a href=""></a>          <span class="at">showcase =</span> bsicons<span class="sc">::</span><span class="fu">bs_icon</span>(<span class="st">"exclamation-triangle-fill"</span>),</span>
-<span id="cb6-40"><a href=""></a>          <span class="at">height =</span> <span class="st">"150px"</span></span>
-<span id="cb6-41"><a href=""></a>      ),</span>
-<span id="cb6-42"><a href=""></a>      <span class="fu">card</span>(</span>
-<span id="cb6-43"><a href=""></a>        <span class="fu">card_header</span>(<span class="st">"Full Priority Ranking"</span>),</span>
-<span id="cb6-44"><a href=""></a>        <span class="fu">plotOutput</span>(<span class="st">"priority_plot"</span>)</span>
-<span id="cb6-45"><a href=""></a>      ),</span>
-<span id="cb6-46"><a href=""></a>      <span class="at">col_widths =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">8</span>)</span>
-<span id="cb6-47"><a href=""></a>  )</span>
-<span id="cb6-48"><a href=""></a>)</span>
-<span id="cb6-49"><a href=""></a></span>
-<span id="cb6-50"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb6-51"><a href=""></a>  prioritized_cats <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
-<span id="cb6-52"><a href=""></a>    <span class="co"># Check if inputs are initialized (important for Shinylive)</span></span>
-<span id="cb6-53"><a href=""></a>    <span class="fu">req</span>(input<span class="sc">$</span>w_hunger, input<span class="sc">$</span>w_cuteness, input<span class="sc">$</span>w_time)</span>
-<span id="cb6-54"><a href=""></a></span>
-<span id="cb6-55"><a href=""></a>    cats <span class="sc">%&gt;%</span></span>
-<span id="cb6-56"><a href=""></a>      <span class="fu">mutate</span>(</span>
-<span id="cb6-57"><a href=""></a>        <span class="at">score =</span> (hunger <span class="sc">*</span> input<span class="sc">$</span>w_hunger) <span class="sc">+</span></span>
-<span id="cb6-58"><a href=""></a>                (cuteness <span class="sc">*</span> input<span class="sc">$</span>w_cuteness) <span class="sc">+</span></span>
-<span id="cb6-59"><a href=""></a>                (last_fed_hours <span class="sc">*</span> input<span class="sc">$</span>w_time)</span>
-<span id="cb6-60"><a href=""></a>      ) <span class="sc">%&gt;%</span></span>
-<span id="cb6-61"><a href=""></a>      <span class="fu">arrange</span>(<span class="fu">desc</span>(score))</span>
-<span id="cb6-62"><a href=""></a>  })</span>
-<span id="cb6-63"><a href=""></a></span>
-<span id="cb6-64"><a href=""></a>  output<span class="sc">$</span>top_priority_name <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb6-65"><a href=""></a>      <span class="fu">req</span>(<span class="fu">prioritized_cats</span>())</span>
-<span id="cb6-66"><a href=""></a>      <span class="fu">prioritized_cats</span>()<span class="sc">$</span>name[<span class="dv">1</span>]</span>
-<span id="cb6-67"><a href=""></a>  })</span>
-<span id="cb6-68"><a href=""></a></span>
-<span id="cb6-69"><a href=""></a>  output<span class="sc">$</span>priority_plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb6-70"><a href=""></a>    data <span class="ot">&lt;-</span> <span class="fu">prioritized_cats</span>()</span>
-<span id="cb6-71"><a href=""></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(name, score), <span class="at">y =</span> score, <span class="at">fill =</span> color)) <span class="sc">+</span></span>
-<span id="cb6-72"><a href=""></a>      <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb6-73"><a href=""></a>      <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(score, <span class="dv">1</span>)), <span class="at">hjust =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fontface=</span><span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb6-74"><a href=""></a>      <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb6-75"><a href=""></a>      <span class="fu">scale_fill_identity</span>() <span class="sc">+</span> <span class="co"># Use the colors defined in the dataframe</span></span>
-<span id="cb6-76"><a href=""></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Priority Score"</span>) <span class="sc">+</span></span>
-<span id="cb6-77"><a href=""></a>      <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb6-78"><a href=""></a>      <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb6-79"><a href=""></a>  }, <span class="at">res =</span> <span class="dv">96</span>)</span>
-<span id="cb6-80"><a href=""></a>}</span>
-<span id="cb6-81"><a href=""></a></span>
-<span id="cb6-82"><a href=""></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href=""></a>@shiny your task is to build a fun and engaging shiny app all about potty training.</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="ss">- </span>The purpose of the app is to help my wife and me know what to do next when it comes to potty training _twins_ (yikes!).</span>
+<span id="cb1-4"><a href=""></a><span class="ss">- </span>We are following _Oh Crap! Potty Training: Everything Modern Parents Need to Know to Do It Once and Do It Right_ by Jamie Glowacki.</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a>The app should consist of:</span>
+<span id="cb1-7"><a href=""></a><span class="ss">  - </span>a page_sidebar where the left sidebar is a shinychat that we an use as our Jamie Glowacki stand-in in times of need. We should use <span class="in">`claude-sonnet-4`</span> via ellmer as our guide.</span>
+<span id="cb1-8"><a href=""></a><span class="ss">  - </span>a main page with trackers and graphs to track pees, poops, and parental sanity. Remember that it matters if we made it to the potty or if it was an accident.</span>
+<span id="cb1-9"><a href=""></a><span class="ss">  - </span>For bonus points, you can include a prediction for the next "event".</span>
+<span id="cb1-10"><a href=""></a><span class="ss">  - </span>You should give this a theme suitable for the task at hand. Use <span class="in">`_brand.yml`</span> to help you out.</span>
+<span id="cb1-11"><a href=""></a></span>
+<span id="cb1-12"><a href=""></a>It is to imporant to remember to treat the twins separately. This should be easy, they are boy-girl twins names Henry and Penelope.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div style="margin-top: 40px;">
+<p><strong>Result:</strong> A fully functional dashboard in 15 minutes.</p>
+</div>
+</div>
+<div class="fragment">
+<div style="margin-top: 40px;">
+<p><strong>Tools:</strong> Positron, Positron Assistant, Shiny Extension, Claude Sonnet 4, <code>_brand.yml</code>, Posit Connect</p>
+</div>
+</div>
+</section>
+<section id="step-3-let-ai-generate-the-code" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Step 3: Let AI Generate the Code</h2>
+<div class="r-fit-text">
+<p>Watch the magic happen ✨</p>
+</div>
+<div class="fragment">
+<div style="font-size: 1.3em; margin-top: 40px;">
+<p>In seconds (or minutes for big reasoning models), the model creates:</p>
+<ul>
+<li>Complete UI structure with <code>shiny</code> and <code>bslib</code> components</li>
+<li>Reactive server logic (after a few back and forths)</li>
+<li>Realistic data simulation</li>
+<li>Interactive visualizations</li>
+<li>Even AI chat integration!</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-4-tweak-and-ship" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Step 4: Tweak and Ship</h2>
+<div style="font-size: 1.3em;">
+<p>Minor adjustments, then you’re done!</p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Common tweaks:</strong></p>
+<ul>
+<li>Fix a few inevitable broken pieces</li>
+<li>Ask for minor layout and styling tweaks</li>
+<li>Add your actual data</li>
+<li>(Occasially) Realize a better approach for the app</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Time investment:</strong></p>
+<ul>
+<li>Generation: 2-5 minutes</li>
+<li>Review: 2-5 minutes</li>
+<li>Tweaks: 5-10 minutes</li>
+<li><strong>Total: 15 minutes</strong></li>
+</ul>
+</div></div>
+</div>
+<div class="fragment">
+<div style="font-size: 1.3em; margin-top: 40px; text-align: center;">
+<p><span class="hl-indigo">Ship it and start getting feedback immediately!</span></p>
+</div>
+</div>
+</section>
+<section id="the-result-a-real-potty-training-dashboard" class="slide level2">
+<h2>The Result: A Real Potty Training Dashboard</h2>
+<div class="r-fit-text">
+<p>From prompt to <strong>disposable</strong>-quality UI in minutes.</p>
+</div>
+
+<img data-src="media/potty_tracker.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="fragment" style="margin-top: 30px;">
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Real-time success rate tracking for each twin</li>
+<li>AI chat with “Jamie Glowacki” for expert advice</li>
+<li>Predictive for next events</li>
+<li>Parental sanity meter (the most important metric!)</li>
+</ul>
 </div>
 <aside class="notes">
-<p>The reveal! The embedded shinylive app allows live interaction. Play with the sliders. Show that if you prioritize cuteness, Whiskers wins, but if you prioritize hunger, Mittens wins. This is impossible with a static slide.</p>
+<p>Show the actual app that was built. This is a real app being used by real parents (me!). It demonstrates the power of disposable apps - built for a specific need, immediately useful.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -887,12 +756,14 @@ James Wade
 <section id="thank-you" class="slide level2 center">
 <h2>Thank You!</h2>
 <div class="r-fit-text">
-<p><span class="hl-indigo">Now go build something disposable!</span></p>
+<p><span class="hl-indigo">Go build something disposable!</span></p>
 </div>
 <p><br></p>
+<div class="columns">
+<div class="column" style="width:70%;">
 <div style="font-size: 1.3em;">
-<p><strong>Resources &amp; Templates:</strong> <a href="https://github.com/jameswade/disposable-shiny">github.com/jameswade/disposable-shiny</a></p>
-<p><strong>Connect:</strong> <a href="https://twitter.com/james_h_wade"><span class="citation" data-cites="jameshwade">@jameshwade</span></a> | <a href="https://jameswade.com">jameswade.com</a></p>
+<p><strong>Content from Today:</strong> <a href="https://github.com/jameswade/posit-conf-2025">github.com/jameswade/posit-conf-2025</a></p>
+<p><strong>Connect:</strong> <a href="https://x.com/jameshwade"><span class="citation" data-cites="jameshwade">@jameshwade</span></a> | <a href="https://jameshwade.com">jameshwade.com</a></p>
 </div>
 <p><br></p>
 <div style="font-size: 1.5em; color: #5856d6;">
@@ -900,8 +771,16 @@ James Wade
 </div>
 <p><br></p>
 <div class="fragment" style="font-size: 1.5em; color: #ff3b30;">
-<p><em>(Now, let’s delete the Cat Chaos Coordinator)</em> 🚮</p>
+<p><em>(Now, let’s delete the Twin Potty Training Command Center)</em> 🗑</p>
 </div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=https://github.com/jameswade/posit-conf-2025.png" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+<p><strong>Scan for Resources</strong></p>
+</div></div>
 
 </section>
     </div>
@@ -1119,44 +998,6 @@ James Wade
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -19,14 +19,102 @@ load_or_create_data <- function() {
   if (file.exists("potty_data.rds")) {
     readRDS("potty_data.rds")
   } else {
-    data.frame(
+    # Generate realistic simulated data
+    generate_simulated_data()
+  }
+}
+
+generate_simulated_data <- function() {
+  # Generate data for the past 10 days with realistic improvement patterns
+  start_date <- Sys.time() - days(10)
+  end_date <- Sys.time()
+
+  # Create a sequence of times throughout each day (roughly every 1-3 hours)
+  times <- seq(from = start_date, to = end_date, by = "90 min")
+
+  data_list <- list()
+
+  for (i in seq_along(times)) {
+    current_time <- times[i]
+    day_progress <- as.numeric(difftime(current_time, start_date, units = "days")) / 10
+
+    # Skip some nighttime events (between 10 PM and 6 AM)
+    hour <- hour(current_time)
+    if (hour >= 22 || hour <= 6) {
+      if (runif(1) > 0.3) next  # 70% chance to skip nighttime events
+    }
+
+    # Henry's improvement: starts at ~40% success, improves to ~65%
+    henry_base_success <- 0.40 + (day_progress * 0.25)
+    # Add some daily variation and time-of-day effects
+    henry_success_prob <- henry_base_success +
+      rnorm(1, 0, 0.1) +  # daily variation
+      ifelse(hour >= 8 && hour <= 20, 0.1, -0.1)  # better during day
+    henry_success_prob <- pmax(0, pmin(1, henry_success_prob))
+
+    # Penelope's improvement: starts at ~50% success, improves to ~80%
+    penelope_base_success <- 0.50 + (day_progress * 0.30)
+    penelope_success_prob <- penelope_base_success +
+      rnorm(1, 0, 0.08) +  # slightly less variation than Henry
+      ifelse(hour >= 8 && hour <= 20, 0.12, -0.08)  # even better during day
+    penelope_success_prob <- pmax(0, pmin(1, penelope_success_prob))
+
+    # Generate events for both children
+    for (child in c("Henry", "Penelope")) {
+      # Determine if this time slot has an event (not every time slot will)
+      if (runif(1) > 0.6) next  # 40% chance of event per time slot
+
+      success_prob <- ifelse(child == "Henry", henry_success_prob, penelope_success_prob)
+
+      # Event type probability (more pee than poop)
+      event_type <- sample(c("pee", "poop"), 1, prob = c(0.8, 0.2))
+
+      # Location based on success probability
+      location <- ifelse(runif(1) < success_prob, "potty", "accident")
+
+      # Generate some realistic notes occasionally
+      notes <- NA_character_
+      if (runif(1) < 0.15) {  # 15% chance of notes
+        note_options <- c(
+          "Great job!", "Getting better!", "Asked to go!", "Dry for 2 hours!",
+          "Had to remind", "Close call", "Very proud", "Independence improving",
+          NA_character_
+        )
+        notes <- sample(note_options, 1)
+      }
+
+      # Add small time variation to avoid exactly simultaneous events
+      event_time <- current_time + minutes(round(runif(1, -30, 30)))
+
+      data_list <- append(data_list, list(data.frame(
+        timestamp = event_time,
+        child = child,
+        event_type = event_type,
+        location = location,
+        notes = notes,
+        stringsAsFactors = FALSE
+      )))
+    }
+  }
+
+  # Combine all events and sort by time
+  if (length(data_list) > 0) {
+    simulated_data <- do.call(rbind, data_list) |>
+      arrange(timestamp) |>
+      # Remove any events in the future
+      filter(timestamp <= Sys.time())
+
+    return(simulated_data)
+  } else {
+    # Return empty data frame if no events generated
+    return(data.frame(
       timestamp = as.POSIXct(character(0)),
       child = character(0),
       event_type = character(0),
       location = character(0),
       notes = character(0),
       stringsAsFactors = FALSE
-    )
+    ))
   }
 }
 
@@ -244,7 +332,16 @@ ui <- page_sidebar(
       column(6, br(), actionButton("add_event", "Add Event",
                                   class = "btn-warning", style = "width: 100%;"))
     ),
-    textAreaInput("notes", "Notes:", placeholder = "Any notes about this event...", rows = 3)
+    textAreaInput("notes", "Notes:", placeholder = "Any notes about this event...", rows = 3),
+    hr(),
+    div(
+      style = "text-align: center;",
+      actionButton("regenerate_data", "🎲 Generate New Sample Data",
+                   class = "btn-outline-secondary btn-sm",
+                   style = "font-size: 0.8em;"),
+      br(),
+      p("For testing/demo purposes", style = "font-size: 0.7em; color: #666; margin-top: 5px;")
+    )
   ),
 
   # Key metrics row
@@ -354,6 +451,20 @@ server <- function(input, output, session) {
     showNotification(
       paste("Added", input$event_type, "event for", input$child, "!"),
       type = if (input$location == "potty") "default" else "warning"
+    )
+  })
+
+  # Regenerate simulated data
+  observeEvent(input$regenerate_data, {
+    new_data <- generate_simulated_data()
+    potty_data(new_data)
+
+    # Save new data
+    saveRDS(new_data, "potty_data.rds")
+
+    showNotification(
+      "Generated new sample data with realistic improvement patterns!",
+      type = "message"
     )
   })
 

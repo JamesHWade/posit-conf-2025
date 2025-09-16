@@ -57,3 +57,36 @@ $presentation-heading-color: $darkblue;
     color: #ffffff;
   }
 }
+
+// Title slide text positioning
+#title-slide h1.title {
+  text-align: left;
+  margin-left: 5%;
+  max-width: 45%;
+}
+
+#title-slide p.subtitle {
+  text-align: left;
+  margin-left: 5%;
+  max-width: 45%;
+}
+
+#title-slide .quarto-title-author {
+  text-align: left !important;
+  margin-left: 5% !important;
+}
+
+#title-slide .quarto-title-authors {
+  text-align: left !important;
+  margin-left: 5% !important;
+}
+
+#title-slide .author {
+  text-align: left !important;
+  margin-left: 5% !important;
+}
+
+#title-slide .date {
+  text-align: left !important;
+  margin-left: 5% !important;
+}

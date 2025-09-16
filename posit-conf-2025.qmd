@@ -13,7 +13,7 @@ format:
     background-transition: fade
     slide-number: c/t
     auto-animate: true
-    # Shinylive configuration is required for the embedded app
+    # Shinylive not needed - using static screenshots instead
     # filters:
       # - shinylive
     embed-resources: false
@@ -21,9 +21,9 @@ format:
     height: 1080
 title-slide-attributes:
   data-background-color: "#001f3f"
-  # Consider adding a subtle background image related to blueprints or sketches
-  # data-background-image: "images/blueprint.png"
-  # data-background-opacity: "0.1"
+  data-background-image: "media/app-in-trash.png"
+  data-background-size: "40% auto"
+  data-background-position: "85% center"
 execute:
   echo: true
   eval: false
@@ -62,21 +62,25 @@ I'm James Wade. I build Shiny apps. A lot of them.
 :::: {.columns style="margin-top: 60px;"}
 
 ::: {.column width="50%"}
+:::{.fragment}
 ### The Production Side
-I maintain a 2-year-old app with 500+ daily users.
+I maintain a 2-year-old app with 100+ users.
 
 It has tests, CI/CD, and a backlog.
 
 [I know the pain of longevity.]{.hl-yellow}
 :::
+:::
 
 ::: {.column width="50%"}
+:::{.fragment}
 ### The Disposable Side
 I also build apps for single meetings.
 
 They live for an hour and die gracefully.
 
 [I know the power of immediacy.]{.hl-yellow}
+:::
 :::
 
 ::::
@@ -116,34 +120,26 @@ Your answer:
 The conversation stops. The momentum is lost.
 :::
 
-## Art Museum vs. Kids' Museum {data-background-color="#5856d6" .dark-slide}
+## Interactive vs Passive {data-background-color="#5856d6" .dark-slide}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Slides are Art Museums 🖼️
-:::{style="font-size: 1.3em; line-height: 1.8;"}
-- Look, don't touch
-- Passive appreciation
-- Curated, singular perspective
-- ["Please step back from the data"]{.hl-yellow}
-:::
+![](media/childrens-museum.png){width="100%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-height: 700px; object-fit: cover;"}
+
+["Come play with the data!"]{.hl-yellow}
 :::
 
 ::: {.column width="50%"}
-### Apps are Kids' Museums 🎨
-:::{style="font-size: 1.3em; line-height: 1.8;"}
-- Hands-on exploration
-- Active discovery
-- Multiple perspectives
-- ["Come play with the data!"]{.hl-yellow}
-:::
+![](media/fine-art-gallery.png){width="100%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-height: 700px; object-fit: cover;"}
+
+["Please step back from the data"]{.hl-yellow}
 :::
 ::::
 
-. . .
-
-:::{.r-fit-text style="margin-top: 80px;" .hl-yellow}
-Which room has more energy?
+:::{.fragment .absolute style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; z-index: 10;"}
+:::{.r-fit-text style="background: rgba(0, 0, 0, 0.7); padding: 20px 40px; border-radius: 10px; color: #ffcc00;"}
+What do you hope to achieve with your presenation?
+:::
 :::
 
 ## The Two Traps We Fall Into {.center}
@@ -155,16 +151,25 @@ Why don't we build more apps? We fall into two traps.
 ::: {.column width="50%" .trap-box .trap-1}
 ### Trap 1: The "Don't Build" Trap 🚫
 
+:::{.fragment}
 "It's too much effort for just *one* meeting."
+:::
 
+:::{.fragment}
 We default to slides because the development hill looks too steep.
+:::
 :::
 
 ::: {.column width="50%" .trap-box .trap-2}
 ### Trap 2: The "Over-Build" Trap 🏗️
-"If I build it, it must be production-grade."
 
+:::{.fragment}
+"If I build it, it must be production-grade."
+:::
+
+:::{.fragment}
 We over-engineer a complex solution for a simple, one-off need.
+:::
 :::
 
 ::::
@@ -209,40 +214,11 @@ The "development hill" isn't steep anymore.
 . . .
 
 :::{.r-fit-text}
-Enter "Vibe Coding"
+Vibe Coding
 :::
 
 :::{style="font-size: 1.3em;"}
-We can now translate plain English prompts directly into functional Shiny code in seconds using tools like Copilot or the Positron Assistant.
-:::
-
-. . .
-
-<br>
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.markdown}
-"Create a Shiny app to explore
-sales data by region and quarter,
-using bslib cards and a dark theme."
-```
-:::
-::: {.column width="50%"}
-:::{.fragment}
-```{.r}
-# AI generates the scaffold...
-library(shiny)
-library(bslib)
-# ... UI layout ...
-# ... Server logic ...
-```
-:::
-:::
-::::
-
-:::{.notes}
-This is the "magic" moment. The technology (AI assistants) makes the disposable approach feasible. This is where you could do a quick live demo or show a video of AI generating an app.
+We can now translate our prompts directly into functional Shiny code in seconds using AI tools.
 :::
 
 ## A Practical Guide {.center}
@@ -258,8 +234,46 @@ We'll walk through the steps by building a critical tool...
 . . .
 
 :::{.r-fit-text style="margin-top: 50px;"}
-[The Cat Chaos Coordinator]{.hl-indigo} 🐱
+[The Twin Potty Training Command Center]{.hl-indigo} 🚽
 :::
+
+
+## Building Apps: Old Way vs. New Way {.center}
+
+<br>
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+### The Old Way 😓
+:::{style="opacity: 0.5;"}
+- ~~Step 1: Define the question~~
+- ~~Step 2: Set up template~~
+- ~~Step 3: Build the UI~~
+- ~~Step 4: Write server logic~~
+- ~~Step 5: Style and polish~~
+:::
+
+:::{.fragment style="color: #ff3b30; font-size: 1.2em; margin-top: 20px;"}
+**Time: 2-4+ hours**
+:::
+:::
+
+::: {.column width="50%"}
+:::{.fragment}
+### The New Way {{< fa robot >}}
+- **Step 1: Define the question**
+- **Step 2: Write a clear prompt**
+- **Step 3: Write Code (with AI assistance)**
+- **Step 4: Tweak and deploy**
+
+:::{style="color: #34c759; font-size: 1.2em; margin-top: 20px;"}
+**Time: 15 minutes**
+:::
+Don't let it take any longer!
+:::
+:::
+::::
 
 
 ## Step 1: Start with ONE Question {auto-animate="true"}
@@ -269,276 +283,151 @@ A disposable app should do one thing well.
 :::
 
 :::{style="font-size: 1.3em; margin-top: 30px;"}
-My house: 3 kids, 4 cats. Chaos is guaranteed.
+My house: Twin toddlers in potty training. Chaos is guaranteed.
 :::
 
 :::{.r-fit-text style="margin-top: 50px;"}
 [Our Question:]{.dark}
-["How should I prioritize which cat needs attention?"]{.hl-indigo}
+["How can I track and optimize twin potty training success?"]{.hl-indigo}
 :::
 
 :::{style="font-size: 1.3em; margin-top: 50px;"}
-The stakeholder (me) might change their priorities (weights) on the fly!
-:::
-
-:::{.notes}
-Define the scope. Use the fun, relatable example (Cat Chaos Coordinator) suggested in the coaching. Emphasize that the priorities might change, setting up the need for interactivity.
+The stakeholders (frazzled parents) need real-time insights and encouragement!
 :::
 
 
-## Step 2: Use a Template & Data {auto-animate="true"}
+## Step 2: Write a Clear Prompt {auto-animate="true"}
 
 :::{style="font-size: 1.3em;"}
-Never start from scratch. Use a minimal `app.R` and load your data.
+Describe what you want in plain English. Be specific about features and tools.
 :::
 
-```{.r code-line-numbers="1-18" data-id="cat-app-code"}
-library(shiny)
-library(bslib)
-library(ggplot2)
-library(dplyr)
+. . .
 
-# Simulated Cat Data
-cats <- data.frame(
-  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
-  hunger = c(8, 4, 9, 5),
-  cuteness = c(9, 7, 10, 8),
-  last_fed_hours = c(4, 1, 5, 2)
-)
+:::{style="font-size: 1.1em; margin-top: 30px;"}
+**Key elements of a good prompt:**
 
-ui <- page_sidebar(
-  title = "🐱 Cat Chaos Coordinator",
-  # Inputs go here
-  # Output goes here
-)
+- Clear objective ("track twin potty training")
+- Specific features ("success rates", "predictions", "chatbot using claude-sonnet-4")
+- UI preferences ("use bslib", "sidebar layout")
+- Data context ("twins named Henry and Penelope")
+:::
 
-server <- function(input, output, session) {
-  # Logic goes here
-}
-```
+. . .
 
+:::{style="font-size: 1.3em; margin-top: 40px; color: #5856d6;"}
+The better your prompt, the less tweaking you'll need.
+:::
 
-## Step 3: Build the Interaction (Inputs) {auto-animate="true"}
+## The AI Magic: One Prompt Away
 
 :::{style="font-size: 1.3em;"}
-We need inputs that let the user define the prioritization weights.
+Here's the Positron Assistant prompt that built our twin tracking app:
 :::
 
-```{.r code-line-numbers="16-26" data-id="cat-app-code"}
-library(shiny)
-library(bslib)
-library(ggplot2)
-library(dplyr)
+. . .
 
-# Simulated Cat Data
-cats <- data.frame(
-  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
-  hunger = c(8, 4, 9, 5),
-  cuteness = c(9, 7, 10, 8),
-  last_fed_hours = c(4, 1, 5, 2)
-)
+```{.markdown}
+@shiny your task is to build a fun and engaging shiny app all about potty training.
 
-ui <- page_sidebar(
-  title = "🐱 Cat Chaos Coordinator",
-  sidebar = sidebar(
-    h4("Prioritization Weights"),
-    sliderInput("w_hunger", "Hunger Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_cuteness", "Cuteness Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_time", "Time Since Fed Weight",
-                min = 0, max = 10, value = 5)
-  ),
-  # Output goes here
-)
+- The purpose of the app is to help my wife and me know what to do next when it comes to potty training _twins_ (yikes!).
+- We are following _Oh Crap! Potty Training: Everything Modern Parents Need to Know to Do It Once and Do It Right_ by Jamie Glowacki.
 
-server <- function(input, output, session) {
-  # Logic goes here
-}
+The app should consist of:
+  - a page_sidebar where the left sidebar is a shinychat that we an use as our Jamie Glowacki stand-in in times of need. We should use `claude-sonnet-4` via ellmer as our guide.
+  - a main page with trackers and graphs to track pees, poops, and parental sanity. Remember that it matters if we made it to the potty or if it was an accident.
+  - For bonus points, you can include a prediction for the next "event".
+  - You should give this a theme suitable for the task at hand. Use `_brand.yml` to help you out.
+
+It is to imporant to remember to treat the twins separately. This should be easy, they are boy-girl twins names Henry and Penelope.
 ```
 
+. . .
 
-## Step 4: Logic and Visualization {auto-animate="true"}
-
-:::{style="font-size: 1.3em;"}
-Calculate the score based on the dynamic weights and visualize the result.
+:::{style="margin-top: 40px;"}
+**Result:** A fully functional dashboard in 15 minutes.
 :::
 
-```{.r code-line-numbers="27, 31-47" data-id="cat-app-code"}
-library(shiny)
-library(bslib)
-library(ggplot2)
-library(dplyr)
+. . .
 
-# Simulated Cat Data
-cats <- data.frame(
-  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
-  hunger = c(8, 4, 9, 5),
-  cuteness = c(9, 7, 10, 8),
-  last_fed_hours = c(4, 1, 5, 2)
-)
+:::{style="margin-top: 40px;"}
+**Tools:** Positron, Positron Assistant, Shiny Extension, Claude Sonnet 4, `_brand.yml`, Posit Connect
+:::
 
-ui <- page_sidebar(
-  title = "🐱 Cat Chaos Coordinator",
-  sidebar = sidebar(
-    h4("Prioritization Weights"),
-    sliderInput("w_hunger", "Hunger Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_cuteness", "Cuteness Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_time", "Time Since Fed Weight",
-                min = 0, max = 10, value = 5)
-  ),
-  card(
-    plotOutput("priority_plot")
-  )
-)
-
-server <- function(input, output, session) {
-  prioritized_cats <- reactive({
-    cats %>%
-      mutate(
-        score = (hunger * input$w_hunger) +
-                (cuteness * input$w_cuteness) +
-                (last_fed_hours * input$w_time)
-      ) %>%
-      arrange(desc(score))
-  })
-
-  output$priority_plot <- renderPlot({
-    ggplot(prioritized_cats(), aes(x = reorder(name, score), y = score)) +
-      geom_col(fill = "#5856d6") +
-      coord_flip() +
-      labs(title = "Cat Priority Score", x = "", y = "Score") +
-      theme_minimal(base_size = 18)
-  })
-}
-```
-
-
-## Step 5: Ship It (and maybe style it) {auto-animate="true"}
+## Step 3: Let AI Generate the Code {auto-animate="true"}
 
 :::{.r-fit-text}
-15 Minutes: From idea to interactive visualization.
+Watch the magic happen ✨
 :::
 
-<br>
+. . .
+
+:::{style="font-size: 1.3em; margin-top: 40px;"}
+In seconds (or minutes for big reasoning models), the model creates:
+
+- Complete UI structure with `shiny` and `bslib` components
+- Reactive server logic (after a few back and forths)
+- Realistic data simulation
+- Interactive visualizations
+- Even AI chat integration!
+:::
+
+
+## Step 4: Tweak and Ship {auto-animate="true"}
 
 :::{style="font-size: 1.3em;"}
-It works. It answers the question. It allows exploration.
+Minor adjustments, then you're done!
 :::
 
-<br>
+. . .
 
-:::{.fragment}
-**What about styling?**
+:::: {.columns}
+::: {.column width="50%"}
+**Common tweaks:**
 
-We can use `bslib` and `thematic` for instant polish. (There's an entire talk on that later today!)
+- Fix a few inevitable broken pieces
+- Ask for minor layout and styling tweaks
+- Add your actual data
+- (Occasially) Realize a better approach for the app
 
-For now, [this is good enough]{.hl-indigo}.
 :::
 
-:::{.notes}
-Acknowledge styling but don't dwell on it, as advised in the transcript. Emphasize speed and utility.
+::: {.column width="50%"}
+**Time investment:**
+
+- Generation: 2-5 minutes
+- Review: 2-5 minutes
+- Tweaks: 5-10 minutes
+- **Total: 15 minutes**
+:::
+::::
+
+. . .
+
+:::{style="font-size: 1.3em; margin-top: 40px; text-align: center;"}
+[Ship it and start getting feedback immediately!]{.hl-indigo}
 :::
 
 
-## The Result: Live Exploration with Shinylive
+## The Result: A Real Potty Training Dashboard
 
 :::{.r-fit-text}
-Let's explore the tradeoffs together, right here in the slides.
+From prompt to **disposable**-quality UI in minutes.
 :::
 
-```{r}
-#| standalone: true
-#| viewerHeight: 650
+![](media/potty_tracker.gif){width="90%" fig-align="center"}
 
-library(shiny)
-library(bslib)
-library(ggplot2)
-library(dplyr)
-library(thematic)
+:::{.fragment style="margin-top: 30px;"}
+**Key Features:**
 
-# Enable thematic for automatic plot styling based on the theme
-# Note: Thematic behavior can vary slightly in Shinylive vs local R
-thematic_shiny()
-
-# Simulated Cat Data with colors
-cats <- data.frame(
-  name = c("Mittens", "Shadow", "Whiskers", "Luna"),
-  hunger = c(8, 4, 9, 5),
-  cuteness = c(9, 7, 10, 8),
-  last_fed_hours = c(4, 1, 5, 2),
-  color = c("#5856d6", "#ff3b30", "#34c759", "#ffcc00")
-)
-
-ui <- page_sidebar(
-  # Add a quick theme for polish
-  theme = bs_theme(bootswatch = "yeti"),
-  title = "🐱 Cat Chaos Coordinator",
-  sidebar = sidebar(
-    h4("Set Your Priorities"),
-    p("Adjust the weights to see how priorities change."),
-    sliderInput("w_hunger", "Hunger Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_cuteness", "Cuteness Weight",
-                min = 0, max = 10, value = 5),
-    sliderInput("w_time", "Time Since Fed Weight",
-                min = 0, max = 10, value = 5)
-  ),
-  layout_columns(
-      value_box(
-          title = "Highest Priority",
-          value = textOutput("top_priority_name"),
-          theme = "primary",
-          showcase = bsicons::bs_icon("exclamation-triangle-fill"),
-          height = "150px"
-      ),
-      card(
-        card_header("Full Priority Ranking"),
-        plotOutput("priority_plot")
-      ),
-      col_widths = c(4, 8)
-  )
-)
-
-server <- function(input, output, session) {
-  prioritized_cats <- reactive({
-    # Check if inputs are initialized (important for Shinylive)
-    req(input$w_hunger, input$w_cuteness, input$w_time)
-
-    cats %>%
-      mutate(
-        score = (hunger * input$w_hunger) +
-                (cuteness * input$w_cuteness) +
-                (last_fed_hours * input$w_time)
-      ) %>%
-      arrange(desc(score))
-  })
-
-  output$top_priority_name <- renderText({
-      req(prioritized_cats())
-      prioritized_cats()$name[1]
-  })
-
-  output$priority_plot <- renderPlot({
-    data <- prioritized_cats()
-    ggplot(data, aes(x = reorder(name, score), y = score, fill = color)) +
-      geom_col(width = 0.7) +
-      geom_text(aes(label = round(score, 1)), hjust = 1.2, color = "black", fontface="bold", size = 5) +
-      coord_flip() +
-      scale_fill_identity() + # Use the colors defined in the dataframe
-      labs(x = "", y = "Priority Score") +
-      theme_minimal(base_size = 18) +
-      theme(panel.grid.major.y = element_blank())
-  }, res = 96)
-}
-
-shinyApp(ui, server)
-```
+- Real-time success rate tracking for each twin
+- AI chat with "Jamie Glowacki" for expert advice
+- Predictive for next events
+- Parental sanity meter (the most important metric!)
+:::
 
 :::{.notes}
-The reveal! The embedded shinylive app allows live interaction. Play with the sliders. Show that if you prioritize cuteness, Whiskers wins, but if you prioritize hunger, Mittens wins. This is impossible with a static slide.
+Show the actual app that was built. This is a real app being used by real parents (me!). It demonstrates the power of disposable apps - built for a specific need, immediately useful.
 :::
 
 
@@ -723,15 +612,19 @@ you open PowerPoint.
 ## Thank You! {.center}
 
 :::{.r-fit-text}
-[Now go build something disposable!]{.hl-indigo}
+[Go build something disposable!]{.hl-indigo}
 :::
 
 <br>
 
+:::: {.columns}
+::: {.column width="70%"}
 :::{style="font-size: 1.3em;"}
-**Resources & Templates:** [github.com/jameswade/disposable-shiny](https://github.com/jameswade/disposable-shiny)
+**Content from Today:**
+[github.com/jameswade/posit-conf-2025](https://github.com/jameswade/posit-conf-2025)
 
-**Connect:** [@jameshwade](https://twitter.com/james_h_wade) | [jameswade.com](https://jameswade.com)
+**Connect:**
+[@jameshwade](https://x.com/jameshwade) | [jameshwade.com](https://jameshwade.com)
 :::
 
 <br>
@@ -743,5 +636,13 @@ Questions?
 <br>
 
 :::{.fragment style="font-size: 1.5em; color: #ff3b30;"}
-*(Now, let's delete the Cat Chaos Coordinator)* 🚮
+*(Now, let's delete the Twin Potty Training Command Center)* 🗑
 :::
+:::
+
+::: {.column width="30%"}
+![](https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/jameswade/posit-conf-2025){width="250px" fig-align="center"}
+
+**Scan for Resources**
+:::
+::::
